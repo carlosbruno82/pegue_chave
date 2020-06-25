@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/cenario.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/chave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/porta.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/teto.png" type="Texture" id=5]
+[ext_resource path="res://Assets/teto2.png" type="Texture" id=6]
+
+[node name="cenario" type="Node2D"]
+
+[node name="textura_cenario" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="porta" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128.221, 354.483 )
+
+[node name="porta2" parent="." instance=ExtResource( 3 )]
+
+[node name="chave" parent="." instance=ExtResource( 2 )]
+
+[node name="chave2" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 180.029, 205.808 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 269.907, 542.852 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="paredes" type="StaticBody2D" parent="."]
+
+[node name="poly" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 145.386, 374.958, 487.224, 374.669, 487.578, 660.388, 200.999, 659.999, 201.541, 612.322, 103.999, 612.999, 103.685, 566.726, 57.8806, 566.901, 57.9776, 375.03, 111.211, 374.658, 111.543, 228.202, 0.31585, 227.622, 2.99924, 717.999, 543.998, 719.999, 544.157, 231.166, 146.859, 228.148 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 0.25058, -1.68081, 0.880829, 228.36, 56.3427, 228.36, 56.3427, 85.2935, 112.653, 85.8214, 112.993, 1.36224 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="paredes"]
+position = Vector2( 198.314, -0.21463 )
+polygon = PoolVector2Array( 2.42047, 229.272, 1.25281, 85.8619, -53.4565, 86.7673, -51.9451, 0.21463, 344.974, 0.338905, 345.788, 230.029 )
+
+[node name="poly4" type="CollisionPolygon2D" parent="paredes"]
+polygon = PoolVector2Array( 110.538, -0.111659, 110.388, -5.95737, 148.31, -5.80748, 149.06, 0.18812, 151.308, 0.18812, 148.91, -10.7538, 108.589, -11.6532, 107.24, -0.111659 )
+
+[node name="teto" type="Sprite" parent="."]
+position = Vector2( 134.228, 282.953 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="teto3" type="Sprite" parent="."]
+position = Vector2( 132.092, 18.9663 )
+scale = Vector2( 0.789836, 0.478166 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="teto2" type="Sprite" parent="."]
+position = Vector2( 128.905, 14.6932 )
+scale = Vector2( 1.11106, 0.955899 )
+z_index = 1
+texture = ExtResource( 6 )
